@@ -26,21 +26,36 @@ public class Inventario {
         }
     }
 
-    public void mostrarProductos() {
-        System.out.println("\n*** PRODUCTOS EN EL SISTEMA ***");
+    //public void mostrarProductos() {
+       // System.out.println("\n*** PRODUCTOS EN EL SISTEMA ***");
 
-        if (this.listaProductos.size() == 0) {
-            System.out.println("\nNo existen productos en el sistema");
-            return;
-        }
+       // if (this.listaProductos.size() == 0) {
+          //  System.out.println("\nNo existen productos en el sistema");
+           // return;
+       //// }
 
-        int iterador = 1;
-        for (Producto producto : this.listaProductos) {
-            System.out.println("\nEste es el producto: " + iterador);
-            System.out.println(producto.mostrarProducto());
-            iterador++;
-        }
-    }
+       // int iterador = 1;
+       // for (Producto producto : this.listaProductos) {
+//System.out.println("\nEste es el producto: " + iterador);
+           // System.out.println(producto.mostrarProducto());
+//iterador++;
+        //}
+   // }
+       public void mostrarProductos() {
+           System.out.println("*** PRODUCTOS EN EL SISTEMA ***");
+           if (listaProductos.size() == 0) {
+               System.out.println("\nNo existen productos en el sistema");
+               return;
+           }
+           for (Producto producto : listaProductos) {
+               System.out.println("Id: " + producto.id);
+               System.out.println("Nombre: " + producto.nombre);
+               System.out.println("Precio: " + producto.precio);
+               System.out.println("Descripción: " + producto.descripcion);
+               System.out.println("Categoria: " + producto.idCategoria);
+               System.out.println("Stock: " + producto.stock);
+           }
+}
 
     public boolean validarExistenciaDeCategorias(){
         return this.listaCategorias.size() > 0;
@@ -50,7 +65,7 @@ public class Inventario {
     //TAREA
     public void mostrarCategorias(){
         for (Categoria categoria : listaCategorias) {
-            System.out.println();  //categoria.id nos da acceso al atributo y no usamos getter ya que no esta privado
+            System.out.println(categoria.id + categoria.nombre);  //categoria.id nos da acceso al atributo y no usamos getter ya que no esta privado
         }
     }
     //TAREA

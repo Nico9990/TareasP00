@@ -8,7 +8,7 @@ public class Categoria {
     public Random random = new Random();
 
     public Categoria(String nombre) {   //id no colocamos pq ya generaremos automaticamente y arraylist
-        this.id=this.random.nextInt(1, 10001);
+        this.id=this.random.nextInt(1, 100);
         this.nombre=nombre;
     }
     public void registrarProductoEnCategoria(Producto producto) {

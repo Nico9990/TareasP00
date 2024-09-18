@@ -12,11 +12,11 @@ public class Producto {
     public Random random = new Random();
 
     public Producto(String nombre, Double precio, String descripcion, int idcategoria, int stock) {
-        this.id = this.random.nextInt(1, 10001);
+        this.id = this.random.nextInt(1, 100);
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
-        this.idCategoria = idCategoria;
+        this.idCategoria = idcategoria;
         this.stock = stock;
     }
     // Getters
