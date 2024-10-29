@@ -5,21 +5,23 @@ public class EnvioInternacional extends Envio{
         super(costoBase, peso);
         this.destino = destino;
     }
-    public double calcularTiempoYCostoEntrega() {
+    public void calcularTiempoYCostoEntrega() {
+        if (super.validarPeso()==true){
         int diasEntrega = 10;
         if (peso > 10) {
-            diasEntrega += 3;
+            diasEntrega = diasEntrega + 3;
         }
 
         double costoFinal = costoBase;
-        if ("internacional".equalsIgnoreCase(destino)) {
-            costoFinal += costoBase * 0.20;
+        costoFinal += costoBase * 0.20;
+
+
+        System.out.println("Entrega en: " + diasEntrega + " días");
+        System.out.println("Costo: $" + costoFinal);
+
+     }else {
+            System.out.println("Ingresa un peso valido Por favor");
         }
-
-        System.out.println("Tiempo de entrega: " + diasEntrega + " días");
-        System.out.println("Costo de entrega: $" + costoFinal);
-
-        return costoFinal;
     }
 
 }

@@ -8,13 +8,15 @@ public abstract class Envio {
     }
 
 
-    public void validarPeso() {
-        if(peso<0){
+    public boolean validarPeso() {
+        if(peso<0.1){
             System.out.println("No existe peso en el paquete");
+            return false;
         }else {
-            System.out.println("Existe peso en el paquete"+peso);
+            System.out.println("Existe peso en el paquete:"+peso);
+            return true;
         }
     }
 
-    public abstract double calcularTiempoYCostoEntrega();
+    public abstract void calcularTiempoYCostoEntrega();
 }

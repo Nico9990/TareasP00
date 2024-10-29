@@ -6,20 +6,27 @@ public class EnvioNacional extends Envio {
         this.distanciaKM = distanciaKM;
     }
   @Override
-    public double calcularTiempoYCostoEntrega() {
-      int diasEntrega = (distanciaKM / 200);     int residuo=distanciaKM%200;
-      if(){
-      }
+    public void calcularTiempoYCostoEntrega() {
+      if (super.validarPeso()==true){
+          int diasEntrega = (distanciaKM / 200);
+          int residuo=distanciaKM%200;
+          if(distanciaKM<199 && distanciaKM>0){
+              diasEntrega=diasEntrega+1;
+          } else if (distanciaKM>200) {
+              diasEntrega=diasEntrega+1;
+          }
 
-      double costoFinal = costoBase;
-      if (peso > 5) {
-          costoFinal = costoFinal + (costoBase * 0.05);
-      }
-      // Muestra los resultados
-      System.out.println("Tiempo de entrega: " + diasEntrega + " días");
-      System.out.println("Costo de entrega: $" + costoFinal);
+          double costoFinal = costoBase;
+          if (peso > 5) {
+              costoFinal = costoFinal + (costoBase * 0.05);
+          }
+          // Muestra los resultados
+          System.out.println("Entrega en: " + diasEntrega + " días");
+          System.out.println("Costo: $" + costoFinal);
 
-      return costoFinal;
+      } else{
+          System.out.println("Ingresa un peso valido Por Favor");
+      }
   }
 }
 
